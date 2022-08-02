@@ -5,4 +5,6 @@ const connection = mongoose.createConnection(
     { useNewUrlParser: true }
 );
 
+mongoose.set("setDefaultsOnInsert", false);
+
 exports.connection = connection;
