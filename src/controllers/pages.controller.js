@@ -24,5 +24,21 @@ const read = async (_, res, next) => {
     }
 };
 
+const update = async (req, res, next) => {
+    const Page = pageModel();
+    const { id } = req.params;
+    try {
+        const page = await Page.findOneAndUpdate(
+            { _id: id },
+            { $set: req.body },
+            { new: true }
+        );
+        res.json(page);
+    } catch (err) {
+        next(err);
+    }
+};
+
 exports.create = create;
 exports.read = read;
+exports.update = update;
