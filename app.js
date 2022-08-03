@@ -5,12 +5,14 @@ const bodyParser = require("body-parser");
 
 const { errorHandler } = require("./src/middlewares/error-handler.middleware");
 const pagesRouter = require("./src/routes/pages.route");
+const notesRouter = require("./src/routes/notes.route");
 
 const app = express();
 
 app.use(bodyParser.json());
 
 app.use("/pages", pagesRouter);
+app.use("/notes", notesRouter);
 
 app.use(errorHandler);
 
