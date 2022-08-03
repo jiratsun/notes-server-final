@@ -14,7 +14,7 @@ const create = async (req, res, next) => {
     }
 };
 
-const read = async (_, res, next) => {
+const readAll = async (_, res, next) => {
     const Page = pageModel();
     try {
         const pages = await Page.find({}).sort({ pageName: "asc" });
@@ -51,6 +51,6 @@ const deleteOne = async (req, res, next) => {
 };
 
 exports.create = create;
-exports.read = read;
+exports.readAll = readAll;
 exports.update = update;
 exports.deleteOne = deleteOne;
