@@ -6,6 +6,9 @@ const router = express.Router();
 
 router.route("/").get(pagesController.read).post(pagesController.create);
 
-router.route("/:id").patch(pagesController.update);
+router
+    .route("/:id")
+    .patch(pagesController.update)
+    .delete(pagesController.deleteOne);
 
 module.exports = router;

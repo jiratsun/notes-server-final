@@ -39,6 +39,18 @@ const update = async (req, res, next) => {
     }
 };
 
+const deleteOne = async (req, res, next) => {
+    const Page = pageModel();
+    const { id } = req.params;
+    try {
+        await Page.deleteOne({ _id: id });
+        res.end();
+    } catch (err) {
+        next(err);
+    }
+};
+
 exports.create = create;
 exports.read = read;
 exports.update = update;
+exports.deleteOne = deleteOne;
