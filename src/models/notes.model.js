@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const connection = require("../services/db.service");
+const { connection } = require("../services/db.service");
 
 const noteSchema = new mongoose.Schema(
     {
