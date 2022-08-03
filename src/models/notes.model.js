@@ -4,7 +4,7 @@ const { connection } = require("../services/db.service");
 const noteSchema = new mongoose.Schema(
     {
         title: { type: String, required: [true, "content required"] },
-        comment: { type: String, required: [true, "comment required"] },
+        comment: { type: String, default: "" },
         isCertain: { type: Boolean, required: [true, "isCertain required"] },
         isFavorite: { type: Boolean, default: false },
         insertDate: { type: Date, default: () => new Date() },
